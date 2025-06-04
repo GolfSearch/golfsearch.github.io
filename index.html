@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GolfSearch</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: url('campogolf.jpg') no-repeat center center fixed;      
+      background-size: cover;
+      color: #000;
+      text-align: center;
+      cursor: url('bandierina.jpg') 16 16, auto;
+
+    }
+    img.logo {
+      width: 150px;
+    }
+    .filters {
+      margin: 20px 0;
+    }
+    .site-button {
+      margin: 10px;
+      display: inline-block;
+    }
+    .site-button a {
+      padding: 10px 20px;
+      background-color: #009879;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      cursor: url('pallina.jpg') 16 16, pointer;
+    }
+    .site-button small {
+      display: block;
+      font-size: 0.75em;
+      color: #eee;
+    }
+    .site-button a:hover {
+      background-color: #007f63;
+    }
+    form {
+      margin-top: 30px;
+    }
+    input, textarea {
+      margin: 5px;
+      padding: 10px;
+      width: 300px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: url('https://cdn-icons-png.flaticon.com/512/833/833314.png') 16 16, pointer;
+    }
+    button:hover {
+      background-color: #004d99;
+    }
+    #manual-sites {
+      margin-top: 40px;
+      padding-top: 10px;
+      border-top: 1px solid #ccc;
+    }
+    .section-title {
+      margin-top: 40px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    .donate {
+      margin-top: 40px;
+    }
+
+    /* ? BLOCCO RESPONSIVE CORRETTO */
+    @media screen and (max-width: 600px) {
+      input, textarea, select {
+        width: 90% !important;
+        font-size: 16px;
+      }
+      .site-button a {
+        padding: 12px;
+        font-size: 14px;
+      }
+      .filters {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      body {
+        padding: 10px;
+        font-size: 16px;
+      }
+      .logo {
+        width: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="ChipChatChum.jpg" alt="GolfSearch Logo" class="logo">
+  <h1>The Global Golf Marketplace</h1>
+  <h3>One place to start all your golf gear searches</h3>
+  <div class="flag"></div>
+  <p>
+    Tired of rewriting the same search across multiple sites?<br>
+    <strong>GolfSearch</strong> is your centralized launchpad to check listings on all major golf equipment platforms both in Europe and North America.
+  </p>
+
+  <div class="filters">
+    <input type="text" id="search-term" placeholder="Enter golf item to search">
+    <select id="region-selector">
+      <option value="ALL">All Regions</option>
+      <option value="EU">Europe Only</option>
+      <option value="USA">America Only</option>
+    </select>
+  </div>
+<div id="site-links">
+    <!-- EU Sites -->
+    <div class="site-button" data-region="EU">
+      <a href="#" onclick="searchSite('https://www.subito.it/annunci-italia/vendita/usato/?q=', 'subito')">Subito.it<small>subito.it</small></a>
+    </div>
+    <div class="site-button" data-region="EU">
+      <a href="#" onclick="searchSite('https://www.clubhousegolf.co.uk/cgi-bin/ss000003.pl?PAGE=search&SS=', 'clubhouse')">ClubhouseGolf UK<small>clubhousegolf.co.uk</small></a>
+    </div>
+    <div class="site-button" data-region="EU">
+      <a href="#" onclick="searchSite('https://www.golfbidder.com/en/search?q=', 'golfbidder')">Golfbidder<small>golfbidder.com</small></a>
+    </div>
+    <div class="site-button" data-region="EU">
+      <a href="#" onclick="searchSite('https://www.ebay.it/sch/i.html?_nkw=', 'ebayit')">eBay Italia<small>ebay.it</small></a>
+    </div>
+    <div class="site-button" data-region="EU">
+      <a href="#" onclick="searchSite('https://www.ebay.de/sch/i.html?_nkw=', 'ebayde')">eBay Germania<small>ebay.de</small></a>
+    </div>
+    <div class="site-button" data-region="EU">
+      <a href="#" onclick="searchSite('https://es.wallapop.com/search?source=search_box&keywords=', 'wallapop')">Wallapop (Spain)<small>wallapop.com</small></a>
+    </div>
+    <div class="site-button" data-region="EU">
+      <a href="#" onclick="searchSite('https://www.leboncoin.fr/recherche?text=', 'leboncoin', '&kst=k&pi=17da6ed2-ddb3-441b-a518-657f85c9904f')">Leboncoin (France)<small>leboncoin.fr</small></a>
+    </div>
+
+    <!-- USA / America Sites -->
+    <div class="site-button" data-region="USA">
+      <a href="#" onclick="searchSite('https://www.globalgolf.com/search/?term=', 'globalgolf')">GlobalGolf<small>globalgolf.com</small></a>
+    </div>
+    <div class="site-button" data-region="USA">
+      <a href="#" onclick="searchSite('https://www.2ndswing.com/catalogsearch/result/?q=', '2ndswing')">2nd Swing Golf<small>2ndswing.com</small></a>
+    </div>
+    <div class="site-button" data-region="USA">
+      <a href="#" onclick="searchSite('https://www.golfavenue.ca/en/search?q=', 'golfavenue')">Golf Avenue<small>golfavenue.com</small></a>
+    </div>
+    <div class="site-button" data-region="USA">
+      <a href="#" onclick="searchSite('https://www.kijiji.ca/b-canada/', 'kijiji', '/k0l0?dc=true&view=list')">Kijiji Canada<small>kijiji.ca</small></a>
+    </div>
+    <div class="site-button" data-region="USA">
+      <a href="https://www.facebook.com/marketplace/category/sporting-goods/?q=golf" target="_blank">Facebook Marketplace (Golf)<small>facebook.com</small></a>
+    </div>
+  </div>
+
+  <div id="manual-sites">
+    <h3 class="section-title">Sites where search terms cannot be passed automatically</h3>
+    <div class="site-button" data-region="USA">
+      <a href="https://www.facebook.com/marketplace/category/sporting-goods/?q=golf" target="_blank">Facebook Marketplace (Golf)<small>facebook.com (global)</small></a>
+    </div>
+    <div class="site-button" data-region="EU">
+      <a href="https://www.facebook.com/groups/274739419402885/" target="_blank">Mercatino Golf Italia<small>facebook.com (IT)</small></a>
+    </div>
+    <div class="site-button" data-region="EU">
+      <a href="https://www.facebook.com/groups/2274027122798494/" target="_blank">Golf Equipment Buy and Sell<small>facebook.com (EU)</small></a>
+    </div>
+    <div class="site-button" data-region="USA">
+      <a href="https://www.facebook.com/groups/usedgolfclubs/" target="_blank">Used Golf Clubs Buy Sell Trade<small>facebook.com (US)</small></a>
+    </div>
+    <div class="site-button" data-region="USA">
+      <a href="https://www.facebook.com/groups/625888580794386/" target="_blank">Golf Club Traders<small>facebook.com (US)</small></a>
+    </div>
+    <div class="site-button" data-region="USA">
+      <a href="https://www.facebook.com/groups/2134148920148250/" target="_blank">Golf Clubs Buy & Sell America<small>facebook.com (US)</small></a>
+    </div>
+
+  </div>
+  
+  <div class="donate">
+    <h3 class="section-title">If you like this tool, consider making a small donation ??</h3>
+    <p>If you like this tool, consider making a small donation ??</p>
+    <a href="https://www.buymeacoffee.com/tuonomeutente" target="_blank">
+      <img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-1.svg" alt="Buy Me a Coffee" height="40">
+    </a>
+  </div>
+
+  <form action="mailto:chipchatchum@gmail.com" method="POST" enctype="text/plain">
+    <h3>Feedback and Suggestions</h3>
+    <input type="text" name="name" placeholder="Your name" required><br>
+    <input type="email" name="email" placeholder="Your email" required><br>
+    <textarea name="message" rows="4" placeholder="Your message..." required></textarea><br>
+    <button type="submit">Send Feedback</button>
+  </form>
+
+  <script>
+    const selector = document.getElementById("region-selector");
+    selector.addEventListener("change", () => {
+      const selected = selector.value;
+      document.querySelectorAll(".site-button").forEach(btn => {
+        const region = btn.dataset.region;
+        btn.style.display = (selected === "ALL" || region === selected) ? "inline-block" : "none";
+      });
+    });
+
+    function searchSite(baseURL, siteId, suffix = '') {
+      const query = document.getElementById("search-term").value.trim();
+      if (query !== '') {
+        let url = baseURL + encodeURIComponent(query) + suffix;
+
+        // Special parameters for clubhousegolf
+        if (siteId === 'clubhouse') {
+          url += '&PR=-1&TB=A&SO=1_10_6_0&ACTION=Go%21';
+        }
+
+        window.open(url, '_blank');
+      } else {
+        alert("Please enter a search term.");
+      }
+    }
+  </script>
+</body>
+</html>
