@@ -78,6 +78,12 @@
     .donate {
       margin-top: 40px;
     }
+    .bold-blue {
+    font-size: 24px; /* Dimensione maggiore */
+    font-weight: bold; /* Testo in grassetto */
+    color: blue; /* Colore blu */
+    }
+
 
     /* ? BLOCCO RESPONSIVE CORRETTO */
     @media screen and (max-width: 600px) {
@@ -188,11 +194,8 @@
   </div>
   
   <form action="mailto:chipchatchum@gmail.com" method="POST" enctype="text/plain">
-    <h3>Feedback and Suggestions</h3>
-    <input type="text" name="name" placeholder="Your name" required><br>
-    <input type="email" name="email" placeholder="Your email" required><br>
-    <textarea name="message" rows="4" placeholder="Your message... Send me an email at chipchatchum@gmail.com" required></textarea><br>
-    <button type="submit">Send Feedback</button>
+        <h3>Feedback and Suggestions at <span class="bold-blue">chipchatchum@gmail.com</span></h3>
+  <button type="submit">Send Feedback</button>
   </form>
 
   <script>
