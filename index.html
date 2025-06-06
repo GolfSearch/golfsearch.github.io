@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <script src="https://tinylytics.app/embed/qb3GU2JjUUHTLNdqiu6M.js" defer></script>  <meta charset="UTF-8">
-<meta name="google-site-verification" content="greMmckNzBNRizLes50kY0G_IMZ4EfjEqlJahZVKOY4" />
+  <meta name="google-site-verification" content="greMmckNzBNRizLes50kY0G_IMZ4EfjEqlJahZVKOY4" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="favicon.png" type="image/x-icon">
@@ -32,6 +32,63 @@
     .filters {
       margin: 20px 0;
     }
+		
+	.site-button.grouped {
+  display: inline-flex;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 6px;
+  vertical-align: top;
+}
+
+.site-button.grouped .main-link {
+  padding: 10px 18px;
+  background-color: #009879;
+  color: white;
+  text-decoration: none;
+  border-right: 1px solid #007f63;
+  font-size: 15px;
+  cursor: pointer;
+  display: block;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.site-button.grouped .main-link small {
+  display: block;
+  font-size: 0.75em;
+  color: #eee;
+}
+
+.site-button.grouped .select-part {
+  background-color: #ccc;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  cursor: pointer;
+  font-size: 18px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.site-button.grouped .select-part input {
+  display: none;
+}
+
+.site-button.grouped.selected .main-link,
+.site-button.grouped.selected .select-part {
+  background-color: #0066cc;
+}
+	
+
+
     .site-button {
       margin: 10px;
       display: inline-block;
@@ -129,64 +186,255 @@
     <strong>GolfSearch</strong> is your centralized launchpad to check listings on all major golf equipment platforms both in Europe and North America.
   </p>
 
+
   <div class="filters">
     <input type="text" id="search-term" placeholder="Enter golf item to search">
-    <select id="region-selector">
-      <option value="ALL">All Regions</option>
-      <option value="EU">Europe Only</option>
-      <option value="USA">America Only</option>
-    </select>
+		<select id="region-selector">
+			<option value="NONE">None</option>
+			<option value="ALL">All Regions</option>
+			<option value="EU">Europe Only</option>
+			<option value="USA">America Only</option>
+		</select>
   </div>
-  <div style="margin-top: 30px; text-align: center;">
-  <button onclick="openAllSearchLinks()" style="padding: 12px 24px; font-size: 16px;">
-    🔗 Open All the Links
-  </button>
-  <div id="popup-warning" style="margin-top: 8px; font-size: 0.85em; color: #666;">
-    ⚠️ You need to disable the pop-up blocker for this site.
-  </div>
-</div>
 
 <div id="site-links">
     <!-- EU Sites -->
-    <div class="site-button" data-region="EU">
-      <a href="#" onclick="searchSite('https://www.clubhousegolf.co.uk/cgi-bin/ss000003.pl?PAGE=search&SS=', 'clubhouse')">ClubhouseGolf UK<small>clubhousegolf.co.uk</small></a>
-    </div>
-    <div class="site-button" data-region="EU">
-      <a href="#" onclick="searchSite('https://www.golfbidder.com/en/search?q=', 'golfbidder')">Golfbidder<small>golfbidder.com</small></a>
-    </div>
-    <div class="site-button" data-region="EU">
-      <a href="#" onclick="searchSite('https://www.leboncoin.fr/recherche?text=', 'leboncoin', '&kst=k&pi=17da6ed2-ddb3-441b-a518-657f85c9904f')">Leboncoin (France)<small>leboncoin.fr</small></a>
-    </div>
-    <div class="site-button" data-region="EU">
-      <a href="#" onclick="searchSite('https://www.ebay.de/sch/i.html?_nkw=', 'ebayde', '&_sop=10&rt=nc&LH_PrefLoc=3')">eBay Germania<small>ebay.de</small></a>
-    </div>
-    <div class="site-button" data-region="EU">
-      <a href="#" onclick="searchSite('https://es.wallapop.com/search?source=search_box&keywords=', 'wallapop')">Wallapop (Spain)<small>wallapop.com</small></a>
-    </div>
-    <div class="site-button" data-region="EU">
-      <a href="#" onclick="searchSite('https://www.ebay.it/sch/i.html?_nkw=', 'ebayit', '&_sop=10&rt=nc&LH_PrefLoc=3')">eBay Italia<small>ebay.it</small></a>
-    </div>
-    <div class="site-button" data-region="EU">
-      <a href="#" onclick="searchSite('https://www.subito.it/annunci-italia/vendita/usato/?q=', 'subito')">Subito.it<small>subito.it</small></a>
-    </div>
+<!-- EU SITES -->
+<div class="site-button grouped" data-region="EU" data-site="clubhouse">
+  <a class="main-link" href="#" onclick="searchSite('https://www.clubhousegolf.co.uk/cgi-bin/ss000003.pl?PAGE=search&SS=', 'clubhouse')">
+    ClubhouseGolf<small>clubhousegolf.co.uk (UK)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="clubhouse">✔
+  </label>
+</div>
 
-    <!-- USA / America Sites -->
-    <div class="site-button" data-region="USA">
-      <a href="#" onclick="searchSite('https://www.globalgolf.com/search/?term=', 'globalgolf')">GlobalGolf<small>globalgolf.com</small></a>
-    </div>
-    <div class="site-button" data-region="USA">
-      <a href="#" onclick="searchSite('https://www.2ndswing.com/catalogsearch/result/?q=', '2ndswing')">2nd Swing Golf<small>2ndswing.com</small></a>
-    </div>
-    <div class="site-button" data-region="USA">
-      <a href="#" onclick="searchSite('https://www.golfavenue.ca/en/search?q=', 'golfavenue')">Golf Avenue<small>golfavenue.com</small></a>
-    </div>
-    <div class="site-button" data-region="USA">
-      <a href="#" onclick="searchSite('https://www.kijiji.ca/b-canada/', 'kijiji', '/k0l0?dc=true&view=list')">Kijiji Canada<small>kijiji.ca</small></a>
-    </div>
-    <div class="site-button" data-region="USA">
-      <a href="https://www.facebook.com/marketplace/category/sporting-goods/?q=golf" target="_blank">Facebook Marketplace (Golf)<small>facebook.com</small></a>
-    </div>
+<div class="site-button grouped" data-region="EU" data-site="golfbidder">
+  <a class="main-link" href="#" onclick="searchSite('https://www.golfbidder.com/en/search?q=', 'golfbidder')">
+    Golfbidder<small>golfbidder.com (EU)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="golfbidder">✔
+  </label>
+</div>
+
+<div class="site-button grouped" data-region="EU" data-site="leboncoin">
+  <a class="main-link" href="#" onclick="searchSite('https://www.leboncoin.fr/recherche?text=', 'leboncoin', '&kst=k&pi=17da6ed2-ddb3-441b-a518-657f85c9904f')">
+    Leboncoin<small>leboncoin.fr (FR)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="leboncoin">✔
+  </label>
+</div>
+
+<div class="site-button grouped" data-region="EU" data-site="ebayde">
+  <a class="main-link" href="#" onclick="searchSite('https://www.ebay.de/sch/i.html?_nkw=', 'ebayde', '&_sop=10&rt=nc&LH_PrefLoc=3')">
+    eBay<small>ebay.de (DE)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="ebayde">✔
+  </label>
+</div>
+
+<div class="site-button grouped" data-region="EU" data-site="wallapop">
+  <a class="main-link" href="#" onclick="searchSite('https://es.wallapop.com/search?source=search_box&keywords=', 'wallapop')">
+    Wallapop<small>wallapop.com (ES)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="wallapop">✔
+  </label>
+</div>
+
+<div class="site-button grouped" data-region="EU" data-site="ebayit">
+  <a class="main-link" href="#" onclick="searchSite('https://www.ebay.it/sch/i.html?_nkw=', 'ebayit', '&_sop=10&rt=nc&LH_PrefLoc=3')">
+    eBay<small>ebay.it (IT)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="ebayit">✔
+  </label>
+</div>
+
+<div class="site-button grouped" data-region="EU" data-site="subito">
+  <a class="main-link" href="#" onclick="searchSite('https://www.subito.it/annunci-italia/vendita/usato/?q=', 'subito')">
+    Subito.it<small>subito.it (IT)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="subito">✔
+  </label>
+</div>
+
+<div class="site-button grouped" data-region="EU" data-site="milanuncios">
+  <a class="main-link" href="#" onclick="searchSite('https://www.milanuncios.com/anuncios/?s=', 'milanuncios', '&orden=relevance&fromSearch=1&fromSuggester=0&suggestionUsed=0&hitOrigin=listing&recentSearchShowed=0&recentSearchUsed=0')">
+    milanuncios<small>milanuncios.com (ES)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="milanuncios">✔
+  </label>
+</div>
+
+
+<div class="site-button grouped" data-region="EU" data-site="kleinanzeigen">
+  <a class="main-link" href="#" onclick="searchSite('https://www.kleinanzeigen.de/s-anzeige/', 'kleinanzeigen', '/k0')">
+    Kleinanzeigen.de<small>kleinanzeigen.de (DE)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="kleinanzeigen">✔
+  </label>
+</div>
+
+<div class="site-button grouped" data-region="EU" data-site="gumtree">
+  <a class="main-link" href="#" onclick="searchSite('https://www.gumtree.com/search?search_category=all&q=', 'gumtree')">
+    Gumtree UK<small>gumtree.com (UK)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="gumtree">✔
+  </label>
+</div>
+
+<div class="site-button grouped" data-region="EU" data-site="marktplaats">
+  <a class="main-link" href="#" onclick="searchSite('https://www.marktplaats.nl/q/', 'marktplaats', '/')">
+    Marktplaats<small>marktplaats.nl (NL)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="marktplaats">✔
+  </label>
+</div>
+
+<div class="site-button grouped" data-region="EU" data-site="2dehands">
+  <a class="main-link" href="#" onclick="searchSite('https://www.2dehands.be/q/', '2dehands', '/')">
+    2dehands<small>2dehands.be (BE)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="2dehands">✔
+  </label>
+</div>
+
+<div class="site-button grouped" data-region="EU" data-site="blocket">
+  <a class="main-link" href="#" onclick="searchSite('https://www.blocket.se/annonser/hela_sverige?q=', 'blocket')">
+    Blocket.se<small>blocket.se (SE)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="blocket">✔
+  </label>
+</div>
+
+<div class="site-button grouped" data-region="EU" data-site="tori">
+  <a class="main-link" href="#" onclick="searchSite('https://www.tori.fi/search?cg=0&w=3&q=', 'tori')">
+    Tori.fi<small>tori.fi (FI)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="tori">✔
+  </label>
+</div>
+
+<!-- USA SITES -->
+<div class="site-button grouped" data-region="USA" data-site="globalgolf">
+  <a class="main-link" href="#" onclick="searchSite('https://www.globalgolf.com/search/?term=', 'globalgolf')">
+    GlobalGolf<small>globalgolf.com (US)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="globalgolf">✔
+  </label>
+</div>
+
+<div class="site-button grouped" data-region="USA" data-site="2ndswing">
+  <a class="main-link" href="#" onclick="searchSite('https://www.2ndswing.com/catalogsearch/result/?q=', '2ndswing')">
+    2nd Swing Golf<small>2ndswing.com (US)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="2ndswing">✔
+  </label>
+</div>
+
+<div class="site-button grouped" data-region="USA" data-site="golfavenue">
+  <a class="main-link" href="#" onclick="searchSite('https://www.golfavenue.ca/en/search?q=', 'golfavenue')">
+    Golf Avenue<small>golfavenue.com (US)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="golfavenue">✔
+  </label>
+</div>
+
+<div class="site-button grouped" data-region="USA" data-site="kijiji">
+  <a class="main-link" href="#" onclick="searchSite('https://www.kijiji.ca/b-canada/', 'kijiji', '/k0l0?dc=true&view=list')">
+    Kijiji<small>kijiji.ca (CA)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="kijiji">✔
+  </label>
+</div>
+
+<div class="site-button grouped" data-region="USA" data-site="golfpartnerusa">
+  <a class="main-link" href="#" onclick="searchSite('https://golfpartnerusa.com/search?q=', 'golfpartnerusa')">
+    GOLF Partner USA<small>golfpartnerusa.com (US)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="golfpartnerusa">✔
+  </label>
+</div>
+
+<div class="site-button grouped" data-region="ASIA" data-site="99golf">
+  <a class="main-link" href="#" onclick="searchSite('https://99golf.sg/used-golf-clubs/?_search=', '99golf')">
+    99Golf<small>99golf.com.sg (SG)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="99golf">✔
+  </label>
+</div>
+
+<div class="site-button grouped" data-region="AUS" data-site="golfworldau">
+  <a class="main-link" href="#" onclick="searchSite('https://www.golfworld.com.au/?rf=kw&kw=', 'golfworldau')">
+    Golf World<small>golfworld.com.au (AUS)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="golfworldau">✔
+  </label>
+</div>
+<div class="site-button grouped" data-region="AUS" data-site="tornysgolf">
+  <a class="main-link" href="#" onclick="searchSite('https://www.tornysgolf.com.au/search?q=', 'tornysgolf')">
+    Torny's Golf Warehouse<small>tornysgolf.com.au (AU)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="tornysgolf">✔
+  </label>
+</div>
+<div class="site-button grouped" data-region="AFRICA" data-site="sagolfonline">
+  <a class="main-link" href="#" onclick="searchSite('https://sagolfonline.co.za/search?type=product&options%5Bprefix%5D=last&q=', 'sagolfonline')">
+    SA Golf Online<small>sagolfonline.co.za (SA)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="sagolfonline">✔
+  </label>
+</div>
+<div class="site-button grouped" data-region="AFRICA" data-site="thegolflab">
+  <a class="main-link" href="#" onclick="searchSite('https://www.thegolflab.co.za/?s=', 'thegolflab')">
+    The Golf Lab<small>thegolflab.co.za (SA)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="thegolflab">✔
+  </label>
+</div>
+<div class="site-button grouped" data-region="AFRICA" data-site="golfersmarket">
+  <a class="main-link" href="#" onclick="searchSite('https://www.golfersmarket.co.za/search?q=', 'golfersmarket', '&options%5Bprefix%5D=last')">
+    Golfers Market<small>golfersmarket.co.za (SA)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="golfersmarket">✔
+  </label>
+</div>
+
+
+
+  <div style="margin-top: 30px; text-align: center;">
+  <button id="open-selected-btn" onclick="openSelectedLinks()" disabled style="padding: 12px 24px; font-size: 16px; background-color: #ccc; color: #666; border: none; border-radius: 5px; cursor: not-allowed;">
+    🔗 Open Selected Links
+  </button>
+  <div style="font-size: 0.85em; color: #666; margin-top: 5px;">
+    You need to disable the pop-up blocker for this site.
   </div>
+</div>
+
+
 
   <div id="manual-sites">
     <h3 class="section-title">Sites where search terms cannot be passed automatically</h3>
@@ -209,7 +457,8 @@
       <a href="https://www.facebook.com/groups/2134148920148250/" target="_blank">Golf Clubs Buy & Sell America<small>facebook.com (US)</small></a>
     </div>
 
-  </div>
+	
+
   
   <form action="mailto:chipchatchum@gmail.com" method="POST" enctype="text/plain">
         <h3>Feedback and Suggestions at <span class="bold-blue">chipchatchum@gmail.com</span></h3>
@@ -232,13 +481,30 @@
     
   <script>
     const selector = document.getElementById("region-selector");
-    selector.addEventListener("change", () => {
-      const selected = selector.value;
-      document.querySelectorAll(".site-button").forEach(btn => {
-        const region = btn.dataset.region;
-        btn.style.display = (selected === "ALL" || region === selected) ? "inline-block" : "none";
-      });
-    });
+document.getElementById('region-selector').addEventListener('change', function () {
+  const selectedRegion = this.value;
+  const allCheckboxes = document.querySelectorAll('.site-checkbox');
+
+  allCheckboxes.forEach(checkbox => {
+    const siteDiv = checkbox.closest('.site-button');
+    const region = siteDiv.getAttribute('data-region');
+
+    const shouldCheck =
+      selectedRegion === 'ALL' ||
+      (selectedRegion === 'EU' && region === 'EU') ||
+      (selectedRegion === 'USA' && region === 'USA');
+
+    checkbox.checked = (selectedRegion !== 'NONE') && shouldCheck;
+
+    if (checkbox.checked) {
+      siteDiv.classList.add('selected');
+    } else {
+      siteDiv.classList.remove('selected');
+    }
+  });
+
+  updateOpenSelectedButtonState();
+});
 
     function searchSite(baseURL, siteId, suffix = '') {
       const query = document.getElementById("search-term").value.trim();
@@ -266,7 +532,16 @@
     { name: 'Wallapop', base: 'https://es.wallapop.com/search?source=search_box&keywords=', suffix: '', region: 'EU' },
     { name: 'eBay Italia', base: 'https://www.ebay.it/sch/i.html?_nkw=', suffix: '&_sop=10&rt=nc&LH_PrefLoc=3', region: 'EU' },
     { name: 'Subito.it', base: 'https://www.subito.it/annunci-italia/vendita/usato/?q=', suffix: '', region: 'EU' },
-    { name: 'GlobalGolf', base: 'https://www.globalgolf.com/search/?term=', suffix: '', region: 'USA' },
+    { name: 'milanuncios', base: 'https://www.milanuncios.com/anuncios/?s=', suffix: '&orden=relevance&fromSearch=1&fromSuggester=0&suggestionUsed=0&hitOrigin=listing&recentSearchShowed=0&recentSearchUsed=0', region: 'EU' },
+    { name: 'paruvendu', base: 'https://www.paruvendu.fr/recherche/?q=', suffix: '', region: 'EU' },
+	{ name: 'kleinanzeigen', base: 'https://www.kleinanzeigen.de/s-anzeige/', suffix: '/k0', region: 'EU' },
+	{ name: 'gumtree', base: 'https://www.gumtree.com/search?search_category=all&q=', suffix: '', region: 'EU' },
+	{ name: 'marktplaats', base: 'https://www.marktplaats.nl/q/', suffix: '/', region: 'EU' },
+	{ name: '2dehands', base: 'https://www.2dehands.be/q/', suffix: '/', region: 'EU' },
+	{ name: 'blocket', base: 'https://www.blocket.se/annonser/hela_sverige?q=', suffix: '', region: 'EU' },
+	{ name: 'tori', base: 'https://www.tori.fi/search?cg=0&w=3&q=', suffix: '', region: 'EU' },
+
+	{ name: 'GlobalGolf', base: 'https://www.globalgolf.com/search/?term=', suffix: '', region: 'USA' },
     { name: '2nd Swing Golf', base: 'https://www.2ndswing.com/catalogsearch/result/?q=', suffix: '', region: 'USA' },
     { name: 'Golf Avenue', base: 'https://www.golfavenue.ca/en/search?q=', suffix: '', region: 'USA' },
     { name: 'Kijiji Canada', base: 'https://www.kijiji.ca/b-canada/', suffix: '/k0l0?dc=true&view=list', region: 'USA' }
@@ -307,6 +582,71 @@ function openAllSearchLinks() {
     popupWarning.textContent = '✅ All links opened successfully. Make sure your browser allows pop-ups.';
   }
 }
+function openSelectedLinks() {
+  const term = encodeURIComponent(document.getElementById('search-term').value.trim());
+  if (!term) {
+    alert("Please enter a search term.");
+    return;
+  }
+
+  const checkboxes = document.querySelectorAll('.site-checkbox:checked');
+  if (checkboxes.length === 0) return;
+
+  let blocked = false;
+
+  checkboxes.forEach(cb => {
+	const siteData = sites.find(s => s.name.toLowerCase().includes(cb.dataset.name.toLowerCase()));
+    if (siteData) {
+      const url = siteData.base + term + siteData.suffix;
+      const newTab = window.open(url, '_blank');
+      if (!newTab || newTab.closed || typeof newTab.closed === "undefined") {
+        blocked = true;
+      }
+    }
+  });
+
+  const btn = document.getElementById("open-selected-btn");
+  if (blocked) {
+    btn.style.backgroundColor = "#ff4d4d";
+    btn.style.color = "#fff";
+    btn.textContent = "🚫 Pop-up blocked!";
+  } else {
+    btn.style.backgroundColor = "#4CAF50";
+    btn.style.color = "#fff";
+    btn.textContent = "✅ Links Opened";
+    setTimeout(() => {
+      btn.textContent = "🔗 Open Selected Links";
+      updateOpenSelectedButtonState(); // Restore style
+    }, 3000);
+  }
+}
+function updateOpenSelectedButtonState() {
+  const btn = document.getElementById("open-selected-btn");
+  const hasSelection = document.querySelectorAll('.site-checkbox:checked').length > 0;
+
+  if (hasSelection) {
+    btn.disabled = false;
+    btn.style.backgroundColor = '#0066cc';
+    btn.style.color = '#fff';
+    btn.style.cursor = 'pointer';
+  } else {
+    btn.disabled = true;
+    btn.style.backgroundColor = '#ccc';
+    btn.style.color = '#666';
+    btn.style.cursor = 'not-allowed';
+  }
+}
+document.querySelectorAll('.site-checkbox').forEach(cb => {
+  cb.addEventListener('change', () => {
+    const parent = cb.closest('.site-button');
+    if (cb.checked) {
+      parent.classList.add('selected');
+    } else {
+      parent.classList.remove('selected');
+    }
+    updateOpenSelectedButtonState();
+  });
+});
 
 
 </script>
