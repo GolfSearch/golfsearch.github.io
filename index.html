@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <script src="https://tinylytics.app/embed/qb3GU2JjUUHTLNdqiu6M.js" defer></script>  <meta charset="UTF-8">
-  <meta name="google-site-verification" content="greMmckNzBNRizLes50kY0G_IMZ4EfjEqlJahZVKOY4" />
+<meta name="google-site-verification" content="greMmckNzBNRizLes50kY0G_IMZ4EfjEqlJahZVKOY4" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="favicon.png" type="image/x-icon">
@@ -137,6 +137,15 @@
       <option value="USA">America Only</option>
     </select>
   </div>
+  <div style="margin-top: 30px; text-align: center;">
+  <button onclick="openAllSearchLinks()" style="padding: 12px 24px; font-size: 16px;">
+    🔗 Open All the Links
+  </button>
+  <div id="popup-warning" style="margin-top: 8px; font-size: 0.85em; color: #666;">
+    ⚠️ You need to disable the pop-up blocker for this site.
+  </div>
+</div>
+
 <div id="site-links">
     <!-- EU Sites -->
     <div class="site-button" data-region="EU">
@@ -246,6 +255,60 @@
         alert("Please enter a search term.");
       }
     }
+	
   </script>
+  <script>
+  const sites = [
+    { name: 'ClubhouseGolf UK', base: 'https://www.clubhousegolf.co.uk/cgi-bin/ss000003.pl?PAGE=search&SS=', suffix: '', region: 'EU' },
+    { name: 'Golfbidder', base: 'https://www.golfbidder.com/en/search?q=', suffix: '', region: 'EU' },
+    { name: 'Leboncoin', base: 'https://www.leboncoin.fr/recherche?text=', suffix: '&kst=k&pi=17da6ed2-ddb3-441b-a518-657f85c9904f', region: 'EU' },
+    { name: 'eBay Germania', base: 'https://www.ebay.de/sch/i.html?_nkw=', suffix: '&_sop=10&rt=nc&LH_PrefLoc=3', region: 'EU' },
+    { name: 'Wallapop', base: 'https://es.wallapop.com/search?source=search_box&keywords=', suffix: '', region: 'EU' },
+    { name: 'eBay Italia', base: 'https://www.ebay.it/sch/i.html?_nkw=', suffix: '&_sop=10&rt=nc&LH_PrefLoc=3', region: 'EU' },
+    { name: 'Subito.it', base: 'https://www.subito.it/annunci-italia/vendita/usato/?q=', suffix: '', region: 'EU' },
+    { name: 'GlobalGolf', base: 'https://www.globalgolf.com/search/?term=', suffix: '', region: 'USA' },
+    { name: '2nd Swing Golf', base: 'https://www.2ndswing.com/catalogsearch/result/?q=', suffix: '', region: 'USA' },
+    { name: 'Golf Avenue', base: 'https://www.golfavenue.ca/en/search?q=', suffix: '', region: 'USA' },
+    { name: 'Kijiji Canada', base: 'https://www.kijiji.ca/b-canada/', suffix: '/k0l0?dc=true&view=list', region: 'USA' }
+  ];
+function openAllSearchLinks() {
+  const term = encodeURIComponent(document.getElementById('search-term').value.trim());
+  const selectedRegion = document.getElementById('region-selector').value;
+  const popupWarning = document.getElementById('popup-warning');
+
+  if (!term) {
+    alert("Please enter a search term.");
+    return;
+  }
+
+  const filteredSites = sites.filter(site => selectedRegion === "ALL" || site.region === selectedRegion);
+
+  if (filteredSites.length === 0) {
+    alert("No sites available for the selected region.");
+    return;
+  }
+
+  let blocked = false;
+
+  for (let site of filteredSites) {
+    const url = site.base + term + site.suffix;
+    const newTab = window.open(url, '_blank');
+
+    if (!newTab || newTab.closed || typeof newTab.closed === 'undefined') {
+      blocked = true;
+    }
+  }
+
+  if (blocked) {
+    popupWarning.style.color = 'red';
+    popupWarning.textContent = '🚫 Pop-up blocker is preventing the links from opening. Please allow pop-ups for this site.';
+  } else {
+    popupWarning.style.color = '#4CAF50';
+    popupWarning.textContent = '✅ All links opened successfully. Make sure your browser allows pop-ups.';
+  }
+}
+
+
+</script>
 </body>
 </html>
