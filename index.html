@@ -11,10 +11,12 @@
   
   <!-- SEO Meta Tags -->
   <meta name="description" content="Search used golf clubs and equipment across multiple sites like eBay, Subito, Golfbidder and more. One place to search for golf gear.">
-  <meta name="keywords" content="ricerca golf, mazze da golf usate, attrezzatura golf, mercato golf, golf di seconda mano, golfbidder, ferri da golf, golf search, used golf clubs, golf gear, golf marketplace, golf equipment, second hand golf, golf club search, subito golf, driver golf, wedge golf, pw golf, iron golf, ebay golf, palos de golf usados, equipo de golf, golf de segunda mano, matériel de golf d'occasion, clubs de golf d’occasion, golfschläger gebraucht, gebrauchte golfausrüstung, golf usato, clubes de golfe usados, equipamento de golfe usado">
+  <meta name="keywords" content="ricerca golf, mazze da golf usate, attrezzatura golf, mercato golf, golf di seconda mano, golfbidder, ferri da golf, golf search, used golf clubs, golf gear, 
+  golf marketplace, golf equipment, second hand golf, golf club search, subito golf, driver golf, wedge golf, pw golf, iron golf, ebay golf">
   <meta name="author" content="GolfSearch">
   <meta name="robots" content="index, follow">
 
+ 
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -180,7 +182,7 @@
   <img src="ChipChatChum.jpg" alt="GolfSearch Logo" class="logo">
   <h1>The Global Golf Marketplace</h1>
   <h3>One place to start all your golf gear searches</h3>
-  <h3Z>Also known as: mazze da golf usate, palos de golf usados, clubs de golf d’occasion, etc</h3Z>	
+  
   <div class="flag"></div>
   <p>
     Tired of rewriting the same search across multiple sites?<br>
@@ -233,7 +235,7 @@
     eBay<small>ebay.de (DE)</small>
   </a>
   <label class="select-part">
-    <input type="checkbox" class="site-checkbox" data-name="ebayde">✔
+    <input type="checkbox" class="site-checkbox" data-name="ebay.de">✔
   </label>
 </div>
 
@@ -251,7 +253,7 @@
     eBay<small>ebay.it (IT)</small>
   </a>
   <label class="select-part">
-    <input type="checkbox" class="site-checkbox" data-name="ebayit">✔
+    <input type="checkbox" class="site-checkbox" data-name="ebay.it">✔
   </label>
 </div>
 
@@ -349,7 +351,7 @@
 
 <div class="site-button grouped" data-region="USA" data-site="golfavenue">
   <a class="main-link" href="#" onclick="searchSite('https://www.golfavenue.ca/en/search?q=', 'golfavenue')">
-    Golf Avenue<small>golfavenue.com (US)</small>
+    Golf Avenue<small>golfavenue.ca (CA)</small>
   </a>
   <label class="select-part">
     <input type="checkbox" class="site-checkbox" data-name="golfavenue">✔
@@ -434,7 +436,9 @@
     You need to disable the pop-up blocker for this site.
   </div>
 </div>
-
+<button id="google-site-search-btn" onclick="googleSiteSearch()" disabled style="padding: 12px 24px; font-size: 16px; background-color: #ccc; color: #666; border: none; border-radius: 5px; cursor: not-allowed; margin-top: 10px;">
+  🔍 Search with Google only on the selected sites
+</button>
 
 
   <div id="manual-sites">
@@ -478,6 +482,7 @@
   style="font-size: 12px;">
   Loading…
 </iframe>
+<h3>palos de golf usados, equipo de golf, golf de segunda mano, matériel de golf d'occasion, clubs de golf d’occasion, golfschläger gebraucht, gebrauchte golfausrüstung, golf usato, clubes de golfe usados, equipamento de golfe usado</h3>
 
     
   <script>
@@ -529,9 +534,9 @@ document.getElementById('region-selector').addEventListener('change', function (
     { name: 'ClubhouseGolf UK', base: 'https://www.clubhousegolf.co.uk/cgi-bin/ss000003.pl?PAGE=search&SS=', suffix: '', region: 'EU' },
     { name: 'Golfbidder', base: 'https://www.golfbidder.com/en/search?q=', suffix: '', region: 'EU' },
     { name: 'Leboncoin', base: 'https://www.leboncoin.fr/recherche?text=', suffix: '&kst=k&pi=17da6ed2-ddb3-441b-a518-657f85c9904f', region: 'EU' },
-    { name: 'eBay Germania', base: 'https://www.ebay.de/sch/i.html?_nkw=', suffix: '&_sop=10&rt=nc&LH_PrefLoc=3', region: 'EU' },
+    { name: 'www.ebay.de', base: 'https://www.ebay.de/sch/i.html?_nkw=', suffix: '&_sop=10&rt=nc&LH_PrefLoc=3', region: 'EU' },
     { name: 'Wallapop', base: 'https://es.wallapop.com/search?source=search_box&keywords=', suffix: '', region: 'EU' },
-    { name: 'eBay Italia', base: 'https://www.ebay.it/sch/i.html?_nkw=', suffix: '&_sop=10&rt=nc&LH_PrefLoc=3', region: 'EU' },
+    { name: 'www.ebay.it', base: 'https://www.ebay.it/sch/i.html?_nkw=', suffix: '&_sop=10&rt=nc&LH_PrefLoc=3', region: 'EU' },
     { name: 'Subito.it', base: 'https://www.subito.it/annunci-italia/vendita/usato/?q=', suffix: '', region: 'EU' },
     { name: 'milanuncios', base: 'https://www.milanuncios.com/anuncios/?s=', suffix: '&orden=relevance&fromSearch=1&fromSuggester=0&suggestionUsed=0&hitOrigin=listing&recentSearchShowed=0&recentSearchUsed=0', region: 'EU' },
     { name: 'paruvendu', base: 'https://www.paruvendu.fr/recherche/?q=', suffix: '', region: 'EU' },
@@ -543,9 +548,17 @@ document.getElementById('region-selector').addEventListener('change', function (
 	{ name: 'tori', base: 'https://www.tori.fi/search?cg=0&w=3&q=', suffix: '', region: 'EU' },
 
 	{ name: 'GlobalGolf', base: 'https://www.globalgolf.com/search/?term=', suffix: '', region: 'USA' },
-    { name: '2nd Swing Golf', base: 'https://www.2ndswing.com/catalogsearch/result/?q=', suffix: '', region: 'USA' },
-    { name: 'Golf Avenue', base: 'https://www.golfavenue.ca/en/search?q=', suffix: '', region: 'USA' },
-    { name: 'Kijiji Canada', base: 'https://www.kijiji.ca/b-canada/', suffix: '/k0l0?dc=true&view=list', region: 'USA' }
+    { name: '2ndSwing', base: 'https://www.2ndswing.com/catalogsearch/result/?q=', suffix: '', region: 'USA' },
+    { name: 'GolfAvenue', base: 'https://www.golfavenue.ca/en/search?q=', suffix: '', region: 'USA' },
+    { name: 'Kijiji Canada', base: 'https://www.kijiji.ca/b-canada/', suffix: '/k0l0?dc=true&view=list', region: 'USA' },
+    { name: 'golfpartnerusa', base: 'https://golfpartnerusa.com/search?q=', suffix: '', region: 'USA' },
+    { name: '99golf.com', base: 'https://99golf.sg/used-golf-clubs/?_search=', suffix: '', region: 'ASIA' },
+    { name: 'golfworldau', base: 'https://www.golfworld.com.au/?rf=kw&kw=', suffix: '', region: 'AUS' },
+    { name: 'tornysgolf', base: 'https://www.tornysgolf.com.au/search?q=', suffix: '', region: 'AUS' },
+    { name: 'sagolfonline', base: 'https://sagolfonline.co.za/search?type=product&options%5Bprefix%5D=last&q=', suffix: '', region: 'AFRICA' },
+    { name: 'thegolflab', base: 'https://www.thegolflab.co.za/?s=', suffix: '', region: 'AFRICA' },
+    { name: 'golfersmarket', base: 'https://www.golfersmarket.co.za/search?q=', suffix: '&options%5Bprefix%5D=last', region: 'AFRICA' },
+	
   ];
 function openAllSearchLinks() {
   const term = encodeURIComponent(document.getElementById('search-term').value.trim());
@@ -621,21 +634,50 @@ function openSelectedLinks() {
     }, 3000);
   }
 }
+function googleSiteSearch() {
+  const term = document.getElementById('search-term').value.trim();
+  if (!term) {
+    alert("Please enter a search term.");
+    return;
+  }
+
+  const checkboxes = document.querySelectorAll('.site-checkbox:checked');
+  if (checkboxes.length === 0) return;
+
+  let query = encodeURIComponent(term);
+  let siteFilters = [];
+
+  checkboxes.forEach(cb => {
+    const siteData = sites.find(s => s.name.toLowerCase().includes(cb.dataset.name.toLowerCase()));
+    if (siteData) {
+      const domain = new URL(siteData.base).hostname.replace(/^www\./, '');
+      siteFilters.push(`site:${domain}`);
+    }
+  });
+
+  const googleQuery = `${term} ${siteFilters.join(' OR ')}`;
+  const url = `https://www.google.com/search?q=${encodeURIComponent(googleQuery)}`;
+  window.open(url, '_blank');
+}
 function updateOpenSelectedButtonState() {
-  const btn = document.getElementById("open-selected-btn");
   const hasSelection = document.querySelectorAll('.site-checkbox:checked').length > 0;
 
-  if (hasSelection) {
-    btn.disabled = false;
-    btn.style.backgroundColor = '#0066cc';
-    btn.style.color = '#fff';
-    btn.style.cursor = 'pointer';
-  } else {
-    btn.disabled = true;
-    btn.style.backgroundColor = '#ccc';
-    btn.style.color = '#666';
-    btn.style.cursor = 'not-allowed';
-  }
+  const openBtn = document.getElementById("open-selected-btn");
+  const googleBtn = document.getElementById("google-site-search-btn");
+
+  [openBtn, googleBtn].forEach(btn => {
+    if (hasSelection) {
+      btn.disabled = false;
+      btn.style.backgroundColor = '#0066cc';
+      btn.style.color = '#fff';
+      btn.style.cursor = 'pointer';
+    } else {
+      btn.disabled = true;
+      btn.style.backgroundColor = '#ccc';
+      btn.style.color = '#666';
+      btn.style.cursor = 'not-allowed';
+    }
+  });
 }
 document.querySelectorAll('.site-checkbox').forEach(cb => {
   cb.addEventListener('change', () => {
