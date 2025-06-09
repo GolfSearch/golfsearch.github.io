@@ -358,6 +358,16 @@
   </label>
 </div>
 
+<div class="site-button grouped" data-region="USA" data-site="nextroundgolf">
+  <a class="main-link" href="#" onclick="searchSite('https://nextroundgolf.com/search?q=', 'nextroundgolf')">
+    Next Round Golf<small>nextroundgolf.com (US)</small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="nextroundgolf">✔
+  </label>
+</div>
+
+
 <div class="site-button grouped" data-region="USA" data-site="kijiji">
   <a class="main-link" href="#" onclick="searchSite('https://www.kijiji.ca/b-canada/', 'kijiji', '/k0l0?dc=true&view=list')">
     Kijiji<small>kijiji.ca (CA)</small>
@@ -550,7 +560,8 @@ document.getElementById('region-selector').addEventListener('change', function (
 	{ name: 'GlobalGolf', base: 'https://www.globalgolf.com/search/?term=', suffix: '', region: 'USA' },
     { name: '2ndSwing', base: 'https://www.2ndswing.com/catalogsearch/result/?q=', suffix: '', region: 'USA' },
     { name: 'GolfAvenue', base: 'https://www.golfavenue.ca/en/search?q=', suffix: '', region: 'USA' },
-    { name: 'Kijiji Canada', base: 'https://www.kijiji.ca/b-canada/', suffix: '/k0l0?dc=true&view=list', region: 'USA' },
+    { name: 'nextroundgolf', base: 'https://nextroundgolf.com/search?q=', suffix: '', region: 'USA' },
+	{ name: 'Kijiji Canada', base: 'https://www.kijiji.ca/b-canada/', suffix: '/k0l0?dc=true&view=list', region: 'USA' },
     { name: 'golfpartnerusa', base: 'https://golfpartnerusa.com/search?q=', suffix: '', region: 'USA' },
     { name: '99golf.com', base: 'https://99golf.sg/used-golf-clubs/?_search=', suffix: '', region: 'ASIA' },
     { name: 'golfworldau', base: 'https://www.golfworld.com.au/?rf=kw&kw=', suffix: '', region: 'AUS' },
@@ -695,3 +706,4 @@ document.querySelectorAll('.site-checkbox').forEach(cb => {
 </script>
 </body>
 </html>
+	
