@@ -63,6 +63,12 @@
   font-size: 0.75em;
   color: #eee;
 }
+.flag-icon {
+  width: 16px;
+  height: 12px;
+  margin-left: 4px;
+  vertical-align: text-bottom;
+}
 
 .site-button.grouped .select-part {
   background-color: #ccc;
@@ -203,54 +209,45 @@
 <div id="site-links">
     <!-- EU Sites -->
 <!-- EU SITES -->
-<div class="site-button grouped" data-region="EU" data-site="clubhouse">
-  <a class="main-link" href="#" onclick="searchSite('https://www.clubhousegolf.co.uk/cgi-bin/ss000003.pl?PAGE=search&SS=', 'clubhouse')">
-    ClubhouseGolf<small>clubhousegolf.co.uk (UK)</small>
-  </a>
-  <label class="select-part">
-    <input type="checkbox" class="site-checkbox" data-name="clubhouse">✔
-  </label>
-</div>
-
 <div class="site-button grouped" data-region="EU" data-site="golfbidder">
   <a class="main-link" href="#" onclick="searchSite('https://www.golfbidder.com/en/search?q=', 'golfbidder')">
-    Golfbidder<small>golfbidder.com (EU)</small>
+    Golfbidder<small>golfbidder.com (EU)<img class="flag-icon" src="https://flagcdn.com/24x18/eu.png" alt="EU"></small>
   </a>
   <label class="select-part">
     <input type="checkbox" class="site-checkbox" data-name="golfbidder">✔
   </label>
 </div>
+<div class="site-button grouped" data-region="EU" data-site="clubhouse">
+  <a class="main-link" href="#" onclick="searchSite('https://www.clubhousegolf.co.uk/cgi-bin/ss000003.pl?PAGE=search&SS=', 'clubhouse')">
+    ClubhouseGolf<small>clubhousegolf.co.uk (UK)<img class="flag-icon" src="https://flagcdn.com/24x18/gb.png" alt="UK"></small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="clubhouse">✔
+  </label>
+</div>
+<div class="site-button grouped" data-region="EU" data-site="gumtree">
+  <a class="main-link" href="#" onclick="searchSite('https://www.gumtree.com/search?search_category=all&q=', 'gumtree')">
+    Gumtree UK<small>gumtree.com (UK)<img class="flag-icon" src="https://flagcdn.com/24x18/gb.png" alt="UK"></small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="gumtree">✔
+  </label>
+</div>
+
 
 <div class="site-button grouped" data-region="EU" data-site="leboncoin">
   <a class="main-link" href="#" onclick="searchSite('https://www.leboncoin.fr/recherche?text=', 'leboncoin', '&kst=k&pi=17da6ed2-ddb3-441b-a518-657f85c9904f')">
-    Leboncoin<small>leboncoin.fr (FR)</small>
+    Leboncoin<small>leboncoin.fr (FR)<img class="flag-icon" src="https://flagcdn.com/24x18/fr.png" alt="FR"></small>
   </a>
   <label class="select-part">
     <input type="checkbox" class="site-checkbox" data-name="leboncoin">✔
   </label>
 </div>
 
-<div class="site-button grouped" data-region="EU" data-site="ebayde">
-  <a class="main-link" href="#" onclick="searchSite('https://www.ebay.de/sch/i.html?_nkw=', 'ebayde', '&_sop=10&rt=nc&LH_PrefLoc=3')">
-    eBay<small>ebay.de (DE)</small>
-  </a>
-  <label class="select-part">
-    <input type="checkbox" class="site-checkbox" data-name="ebay.de">✔
-  </label>
-</div>
-
-<div class="site-button grouped" data-region="EU" data-site="wallapop">
-  <a class="main-link" href="#" onclick="searchSite('https://es.wallapop.com/search?source=search_box&keywords=', 'wallapop')">
-    Wallapop<small>wallapop.com (ES)</small>
-  </a>
-  <label class="select-part">
-    <input type="checkbox" class="site-checkbox" data-name="wallapop">✔
-  </label>
-</div>
 
 <div class="site-button grouped" data-region="EU" data-site="ebayit">
   <a class="main-link" href="#" onclick="searchSite('https://www.ebay.it/sch/i.html?_nkw=', 'ebayit', '&_sop=10&rt=nc&LH_PrefLoc=3')">
-    eBay<small>ebay.it (IT)</small>
+    eBay<small>ebay.it (IT)<img class="flag-icon" src="https://flagcdn.com/24x18/it.png" alt="IT"></small>
   </a>
   <label class="select-part">
     <input type="checkbox" class="site-checkbox" data-name="ebay.it">✔
@@ -259,44 +256,172 @@
 
 <div class="site-button grouped" data-region="EU" data-site="subito">
   <a class="main-link" href="#" onclick="searchSite('https://www.subito.it/annunci-italia/vendita/usato/?q=', 'subito')">
-    Subito.it<small>subito.it (IT)</small>
-  </a>
+    Subito.it<small>subito.it <img class="flag-icon" src="https://flagcdn.com/24x18/it.png" alt="IT"></small></a>
   <label class="select-part">
     <input type="checkbox" class="site-checkbox" data-name="subito">✔
   </label>
 </div>
 
+<div class="site-button grouped" data-region="EU" data-site="olx">
+  <a class="main-link" href="#" onclick="searchSite('https://www.olx.pl/oferty/q-', 'olx')">
+    olx.pl<small>olx.pl (PL) <img class="flag-icon" src="https://flagcdn.com/24x18/pl.png" alt="PL"></small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="olx">✔
+  </label>
+</div>
+
+<div class="site-button grouped" data-region="EU" data-site="allegro">
+  <a class="main-link" href="#" onclick="searchSite('https://allegro.pl/listing?string=', 'allegro')">
+    allegro.pl<small>allegro.pl (PL)<img class="flag-icon" src="https://flagcdn.com/24x18/pl.png" alt="PL"></small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="allegro">✔
+  </label>
+</div>
+
+<div class="site-button grouped" data-region="EU" data-site="bazos">
+  <a class="main-link" href="#" onclick="searchSite('https://www.bazos.cz/search.php?hledat=', 'bazos', '&rubriky=www&hlokalita=&humkreis=25&cenaod=&cenado=&Submit=Hledat&order=&kitx=ano')">
+    bazos.cz<small>bazos.cz (CZ)<img class="flag-icon" src="https://flagcdn.com/24x18/cz.png" alt="CZ"></small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="bazos">✔
+  </label>
+</div>
+
+<div class="site-button grouped" data-region="EU" data-site="sbazar">
+  <a class="main-link" href="#" onclick="searchSite('https://www.sbazar.cz/hledej/', 'sbazar')">
+    sbazar.cz<small>sbazar.cz (CZ)<img class="flag-icon" src="https://flagcdn.com/24x18/cz.png" alt="CZ"></small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="sbazar">✔
+  </label>
+</div>
+
+
+<div class="site-button grouped" data-region="EU" data-site="bazos.sk">
+  <a class="main-link" href="#" onclick="searchSite('https://www.bazos.sk/search.php?hledat=', 'bazos-sk', '&rubriky=www&hlokalita=&humkreis=25&cenaod=&cenado=&Submit=H%C4%BEada%C5%A5&order=&kitx=ano')">
+    bazos.sk<small>bazos.sk (SK)<img class="flag-icon" src="https://flagcdn.com/24x18/sk.png" alt="SK"></small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="bazos.sk">✔
+  </label>
+</div>
+
+
+<div class="site-button grouped" data-region="EU" data-site="olx.ro">
+  <a class="main-link" href="#" onclick="searchSite('https://www.olx.ro/oferte/q-', 'olx.ro', '/')">
+    olx.ro<small>olx.ro (RO)<img class="flag-icon" src="https://flagcdn.com/24x18/ro.png" alt="RO"></small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="olx.ro">✔
+  </label>
+</div>
+
+
+<div class="site-button grouped" data-region="EU" data-site="olx.bg">
+  <a class="main-link" href="#" onclick="searchSite('https://www.olx.bg/ads/q-', 'olx.bg', '/')">
+    olx.bg<small>olx.bg (BG)<img class="flag-icon" src="https://flagcdn.com/24x18/bg.png" alt="BG"></small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="olx.bg">✔
+  </label>
+</div>
+
+
+<div class="site-button grouped" data-region="EU" data-site="njuskalo">
+  <a class="main-link" href="#" onclick="searchSite('https://www.njuskalo.hr/search/?keywords=', 'njuskalo')">
+    njuskalo.hr<small>njuskalo.hr (HR)<img class="flag-icon" src="https://flagcdn.com/24x18/hr.png" alt="HR"></small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="njuskalo">✔
+  </label>
+</div>
+
+
+<div class="site-button grouped" data-region="EU" data-site="bolha">
+  <a class="main-link" href="#" onclick="searchSite('https://www.bolha.com/search/?keywords=', 'bolha')">
+    bolha.com<small>bolha.com (SI)<img class="flag-icon" src="https://flagcdn.com/24x18/si.png" alt="SI"></small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="bolha">✔
+  </label>
+</div>
+
+
+<div class="site-button grouped" data-region="EU" data-site="finn">
+  <a class="main-link" href="#" onclick="searchSite('https://www.finn.no/recommerce/forsale/search?q=', 'finn')">
+    finn.no<small>finn.no (NO)<img class="flag-icon" src="https://flagcdn.com/24x18/no.png" alt="NO"></small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="finn">✔
+  </label>
+</div>
+<div class="site-button grouped" data-region="EU" data-site="dba">
+  <a class="main-link" href="#" onclick="searchSite('https://www.dba.dk/recommerce/forsale/search?q=', 'dba')">
+    dba.dk<small>dba.dk (DK)<img class="flag-icon" src="https://flagcdn.com/24x18/dk.png" alt="DK"></small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="dba">✔
+  </label>
+</div>
+<div class="site-button grouped" data-region="EU" data-site="bland">
+  <a class="main-link" href="#" onclick="searchSite('https://bland.is/classified/default.aspx?q=', 'bland')">
+    bland.is<small>bland.is (IS)<img class="flag-icon" src="https://flagcdn.com/24x18/is.png" alt="IS"></small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="bland">✔
+  </label>
+</div>
+
+
+
+    
+
+
+<div class="site-button grouped" data-region="EU" data-site="wallapop">
+  <a class="main-link" href="#" onclick="searchSite('https://es.wallapop.com/search?source=search_box&keywords=', 'wallapop')">
+    Wallapop<small>wallapop.com (ES) <img class="flag-icon" src="https://flagcdn.com/24x18/es.png" alt="ES"></small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="wallapop">✔
+  </label>
+</div>
+
+
+
 <div class="site-button grouped" data-region="EU" data-site="milanuncios">
   <a class="main-link" href="#" onclick="searchSite('https://www.milanuncios.com/anuncios/?s=', 'milanuncios', '&orden=relevance&fromSearch=1&fromSuggester=0&suggestionUsed=0&hitOrigin=listing&recentSearchShowed=0&recentSearchUsed=0')">
-    milanuncios<small>milanuncios.com (ES)</small>
+    milanuncios<small>milanuncios.com (ES)<img class="flag-icon" src="https://flagcdn.com/24x18/es.png" alt="ES"></small>
   </a>
   <label class="select-part">
     <input type="checkbox" class="site-checkbox" data-name="milanuncios">✔
   </label>
 </div>
 
+<div class="site-button grouped" data-region="EU" data-site="ebayde">
+  <a class="main-link" href="#" onclick="searchSite('https://www.ebay.de/sch/i.html?_nkw=', 'ebayde', '&_sop=10&rt=nc&LH_PrefLoc=3')">
+    eBay<small>ebay.de (DE)<img class="flag-icon" src="https://flagcdn.com/24x18/de.png" alt="DE"></small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="ebay.de">✔
+  </label>
+</div>
 
 <div class="site-button grouped" data-region="EU" data-site="kleinanzeigen">
   <a class="main-link" href="#" onclick="searchSite('https://www.kleinanzeigen.de/s-anzeige/', 'kleinanzeigen', '/k0')">
-    Kleinanzeigen.de<small>kleinanzeigen.de (DE)</small>
+    Kleinanzeigen.de<small>kleinanzeigen.de (DE)<img class="flag-icon" src="https://flagcdn.com/24x18/de.png" alt="DE"></small>
   </a>
   <label class="select-part">
     <input type="checkbox" class="site-checkbox" data-name="kleinanzeigen">✔
   </label>
 </div>
 
-<div class="site-button grouped" data-region="EU" data-site="gumtree">
-  <a class="main-link" href="#" onclick="searchSite('https://www.gumtree.com/search?search_category=all&q=', 'gumtree')">
-    Gumtree UK<small>gumtree.com (UK)</small>
-  </a>
-  <label class="select-part">
-    <input type="checkbox" class="site-checkbox" data-name="gumtree">✔
-  </label>
-</div>
+
 
 <div class="site-button grouped" data-region="EU" data-site="marktplaats">
   <a class="main-link" href="#" onclick="searchSite('https://www.marktplaats.nl/q/', 'marktplaats', '/')">
-    Marktplaats<small>marktplaats.nl (NL)</small>
+    Marktplaats<small>marktplaats.nl (NL)<img class="flag-icon" src="https://flagcdn.com/24x18/nl.png" alt="NL"></small>
   </a>
   <label class="select-part">
     <input type="checkbox" class="site-checkbox" data-name="marktplaats">✔
@@ -305,7 +430,7 @@
 
 <div class="site-button grouped" data-region="EU" data-site="2dehands">
   <a class="main-link" href="#" onclick="searchSite('https://www.2dehands.be/q/', '2dehands', '/')">
-    2dehands<small>2dehands.be (BE)</small>
+    2dehands<small>2dehands.be (BE)<img class="flag-icon" src="https://flagcdn.com/24x18/be.png" alt="BE"></small>
   </a>
   <label class="select-part">
     <input type="checkbox" class="site-checkbox" data-name="2dehands">✔
@@ -314,7 +439,7 @@
 
 <div class="site-button grouped" data-region="EU" data-site="blocket">
   <a class="main-link" href="#" onclick="searchSite('https://www.blocket.se/annonser/hela_sverige?q=', 'blocket')">
-    Blocket.se<small>blocket.se (SE)</small>
+    Blocket.se<small>blocket.se (SE)<img class="flag-icon" src="https://flagcdn.com/24x18/se.png" alt="SE"></small>
   </a>
   <label class="select-part">
     <input type="checkbox" class="site-checkbox" data-name="blocket">✔
@@ -323,7 +448,7 @@
 
 <div class="site-button grouped" data-region="EU" data-site="tori">
   <a class="main-link" href="#" onclick="searchSite('https://www.tori.fi/search?cg=0&w=3&q=', 'tori')">
-    Tori.fi<small>tori.fi (FI)</small>
+    Tori.fi<small>tori.fi (FI)<img class="flag-icon" src="https://flagcdn.com/24x18/fi.png" alt="FI"></small>
   </a>
   <label class="select-part">
     <input type="checkbox" class="site-checkbox" data-name="tori">✔
@@ -333,7 +458,7 @@
 <!-- USA SITES -->
 <div class="site-button grouped" data-region="USA" data-site="globalgolf">
   <a class="main-link" href="#" onclick="searchSite('https://www.globalgolf.com/search/?term=', 'globalgolf')">
-    GlobalGolf<small>globalgolf.com (US)</small>
+    GlobalGolf<small>globalgolf.com (US)<img class="flag-icon" src="https://flagcdn.com/24x18/us.png" alt="US"></small>
   </a>
   <label class="select-part">
     <input type="checkbox" class="site-checkbox" data-name="globalgolf">✔
@@ -342,53 +467,53 @@
 
 <div class="site-button grouped" data-region="USA" data-site="2ndswing">
   <a class="main-link" href="#" onclick="searchSite('https://www.2ndswing.com/catalogsearch/result/?q=', '2ndswing')">
-    2nd Swing Golf<small>2ndswing.com (US)</small>
+    2nd Swing Golf<small>2ndswing.com (US<img class="flag-icon" src="https://flagcdn.com/24x18/us.png" alt="US">small>
   </a>
   <label class="select-part">
     <input type="checkbox" class="site-checkbox" data-name="2ndswing">✔
   </label>
 </div>
 
-<div class="site-button grouped" data-region="USA" data-site="golfavenue">
-  <a class="main-link" href="#" onclick="searchSite('https://www.golfavenue.ca/en/search?q=', 'golfavenue')">
-    Golf Avenue<small>golfavenue.ca (CA)</small>
-  </a>
-  <label class="select-part">
-    <input type="checkbox" class="site-checkbox" data-name="golfavenue">✔
-  </label>
-</div>
 
 <div class="site-button grouped" data-region="USA" data-site="nextroundgolf">
   <a class="main-link" href="#" onclick="searchSite('https://nextroundgolf.com/search?q=', 'nextroundgolf')">
-    Next Round Golf<small>nextroundgolf.com (US)</small>
+    Next Round Golf<small>nextroundgolf.com (US)<img class="flag-icon" src="https://flagcdn.com/24x18/us.png" alt="US"></small>
   </a>
   <label class="select-part">
     <input type="checkbox" class="site-checkbox" data-name="nextroundgolf">✔
   </label>
 </div>
-
-
-<div class="site-button grouped" data-region="USA" data-site="kijiji">
-  <a class="main-link" href="#" onclick="searchSite('https://www.kijiji.ca/b-canada/', 'kijiji', '/k0l0?dc=true&view=list')">
-    Kijiji<small>kijiji.ca (CA)</small>
-  </a>
-  <label class="select-part">
-    <input type="checkbox" class="site-checkbox" data-name="kijiji">✔
-  </label>
-</div>
-
 <div class="site-button grouped" data-region="USA" data-site="golfpartnerusa">
   <a class="main-link" href="#" onclick="searchSite('https://golfpartnerusa.com/search?q=', 'golfpartnerusa')">
-    GOLF Partner USA<small>golfpartnerusa.com (US)</small>
+    GOLF Partner USA<small>golfpartnerusa.com (US)<img class="flag-icon" src="https://flagcdn.com/24x18/us.png" alt="US"></small>
   </a>
   <label class="select-part">
     <input type="checkbox" class="site-checkbox" data-name="golfpartnerusa">✔
   </label>
 </div>
 
+
+<div class="site-button grouped" data-region="USA" data-site="kijiji">
+  <a class="main-link" href="#" onclick="searchSite('https://www.kijiji.ca/b-canada/', 'kijiji', '/k0l0?dc=true&view=list')">
+    Kijiji<small>kijiji.ca (CA)<img class="flag-icon" src="https://flagcdn.com/24x18/ca.png" alt="CA"></small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="kijiji">✔
+  </label>
+</div>
+<div class="site-button grouped" data-region="USA" data-site="golfavenue">
+  <a class="main-link" href="#" onclick="searchSite('https://www.golfavenue.ca/en/search?q=', 'golfavenue')">
+    Golf Avenue<small>golfavenue.ca (CA)<img class="flag-icon" src="https://flagcdn.com/24x18/ca.png" alt="CA"></small>
+  </a>
+  <label class="select-part">
+    <input type="checkbox" class="site-checkbox" data-name="golfavenue">✔
+  </label>
+</div>
+
+
 <div class="site-button grouped" data-region="ASIA" data-site="99golf">
   <a class="main-link" href="#" onclick="searchSite('https://99golf.sg/used-golf-clubs/?_search=', '99golf')">
-    99Golf<small>99golf.com.sg (SG)</small>
+    99Golf<small>99golf.com.sg (SG)<img class="flag-icon" src="https://flagcdn.com/24x18/sg.png" alt="SG"></small>
   </a>
   <label class="select-part">
     <input type="checkbox" class="site-checkbox" data-name="99golf">✔
@@ -397,7 +522,7 @@
 
 <div class="site-button grouped" data-region="AUS" data-site="golfworldau">
   <a class="main-link" href="#" onclick="searchSite('https://www.golfworld.com.au/?rf=kw&kw=', 'golfworldau')">
-    Golf World<small>golfworld.com.au (AUS)</small>
+    Golf World<small>golfworld.com.au (AU)<img class="flag-icon" src="https://flagcdn.com/24x18/au.png" alt="AU"></small>
   </a>
   <label class="select-part">
     <input type="checkbox" class="site-checkbox" data-name="golfworldau">✔
@@ -405,7 +530,7 @@
 </div>
 <div class="site-button grouped" data-region="AUS" data-site="tornysgolf">
   <a class="main-link" href="#" onclick="searchSite('https://www.tornysgolf.com.au/search?q=', 'tornysgolf')">
-    Torny's Golf Warehouse<small>tornysgolf.com.au (AU)</small>
+    Torny's Golf Warehouse<small>tornysgolf.com.au (AUS)<img class="flag-icon" src="https://flagcdn.com/24x18/au.png" alt="AU"></small>
   </a>
   <label class="select-part">
     <input type="checkbox" class="site-checkbox" data-name="tornysgolf">✔
@@ -413,7 +538,7 @@
 </div>
 <div class="site-button grouped" data-region="AFRICA" data-site="sagolfonline">
   <a class="main-link" href="#" onclick="searchSite('https://sagolfonline.co.za/search?type=product&options%5Bprefix%5D=last&q=', 'sagolfonline')">
-    SA Golf Online<small>sagolfonline.co.za (SA)</small>
+    SA Golf Online<small>sagolfonline.co.za (ZA)<img class="flag-icon" src="https://flagcdn.com/24x18/za.png" alt="ZA"></small>
   </a>
   <label class="select-part">
     <input type="checkbox" class="site-checkbox" data-name="sagolfonline">✔
@@ -421,7 +546,7 @@
 </div>
 <div class="site-button grouped" data-region="AFRICA" data-site="thegolflab">
   <a class="main-link" href="#" onclick="searchSite('https://www.thegolflab.co.za/?s=', 'thegolflab')">
-    The Golf Lab<small>thegolflab.co.za (SA)</small>
+    The Golf Lab<small>thegolflab.co.za (ZA)<img class="flag-icon" src="https://flagcdn.com/24x18/za.png" alt="ZA"></small>
   </a>
   <label class="select-part">
     <input type="checkbox" class="site-checkbox" data-name="thegolflab">✔
@@ -429,7 +554,7 @@
 </div>
 <div class="site-button grouped" data-region="AFRICA" data-site="golfersmarket">
   <a class="main-link" href="#" onclick="searchSite('https://www.golfersmarket.co.za/search?q=', 'golfersmarket', '&options%5Bprefix%5D=last')">
-    Golfers Market<small>golfersmarket.co.za (SA)</small>
+    Golfers Market<small>golfersmarket.co.za (ZA)<img class="flag-icon" src="https://flagcdn.com/24x18/za.png" alt="ZA"></small>
   </a>
   <label class="select-part">
     <input type="checkbox" class="site-checkbox" data-name="golfersmarket">✔
@@ -454,22 +579,22 @@
   <div id="manual-sites">
     <h3 class="section-title">Sites where search terms cannot be passed automatically</h3>
     <div class="site-button" data-region="USA">
-      <a href="https://www.facebook.com/marketplace/category/sporting-goods/?q=golf" target="_blank">Facebook Marketplace (Golf)<small>facebook.com (global)</small></a>
+      <a href="https://www.facebook.com/marketplace/category/sporting-goods/?q=golf" target="_blank">Facebook Marketplace (Golf)<small>facebook.com (global)<img class="flag-icon" src="https://flagcdn.com/24x18/us.png" alt="US"></small></a>
     </div>
     <div class="site-button" data-region="EU">
-      <a href="https://www.facebook.com/groups/274739419402885/" target="_blank">Mercatino Golf Italia<small>facebook.com (IT)</small></a>
+      <a href="https://www.facebook.com/groups/274739419402885/" target="_blank">Mercatino Golf Italia<small>facebook.com (IT)<img class="flag-icon" src="https://flagcdn.com/24x18/it.png" alt="IT"></small></a>
     </div>
     <div class="site-button" data-region="EU">
-      <a href="https://www.facebook.com/groups/2274027122798494/" target="_blank">Golf Equipment Buy and Sell<small>facebook.com (EU)</small></a>
+      <a href="https://www.facebook.com/groups/2274027122798494/" target="_blank">Golf Equipment Buy and Sell<small>facebook.com (EU)<img class="flag-icon" src="https://flagcdn.com/24x18/eu.png" alt="EU"></small></a>
     </div>
     <div class="site-button" data-region="USA">
-      <a href="https://www.facebook.com/groups/usedgolfclubs/" target="_blank">Used Golf Clubs Buy Sell Trade<small>facebook.com (US)</small></a>
+      <a href="https://www.facebook.com/groups/usedgolfclubs/" target="_blank">Used Golf Clubs Buy Sell Trade<small>facebook.com (US)<img class="flag-icon" src="https://flagcdn.com/24x18/us.png" alt="US"></small></a>
     </div>
     <div class="site-button" data-region="USA">
-      <a href="https://www.facebook.com/groups/625888580794386/" target="_blank">Golf Club Traders<small>facebook.com (US)</small></a>
+      <a href="https://www.facebook.com/groups/625888580794386/" target="_blank">Golf Club Traders<small>facebook.com (US)<img class="flag-icon" src="https://flagcdn.com/24x18/us.png" alt="US"></small></a>
     </div>
     <div class="site-button" data-region="USA">
-      <a href="https://www.facebook.com/groups/2134148920148250/" target="_blank">Golf Clubs Buy & Sell America<small>facebook.com (US)</small></a>
+      <a href="https://www.facebook.com/groups/2134148920148250/" target="_blank">Golf Clubs Buy & Sell America<small>facebook.com (US)<img class="flag-icon" src="https://flagcdn.com/24x18/us.png" alt="US"></small></a>
     </div>
 
 	
@@ -548,6 +673,34 @@ document.getElementById('region-selector').addEventListener('change', function (
     { name: 'Wallapop', base: 'https://es.wallapop.com/search?source=search_box&keywords=', suffix: '', region: 'EU' },
     { name: 'www.ebay.it', base: 'https://www.ebay.it/sch/i.html?_nkw=', suffix: '&_sop=10&rt=nc&LH_PrefLoc=3', region: 'EU' },
     { name: 'Subito.it', base: 'https://www.subito.it/annunci-italia/vendita/usato/?q=', suffix: '', region: 'EU' },
+    { name: 'olx.pl', base: 'https://www.olx.pl/oferty/q-', suffix: '', region: 'EU' },
+    { name: 'allegro.pl', base: 'https://allegro.pl/listing?string=', suffix: '', region: 'EU' },
+    { name: 'bazos.cz', base: 'https://www.bazos.cz/search.php?hledat=', suffix: '&rubriky=www&hlokalita=&humkreis=25&cenaod=&cenado=&Submit=Hledat&order=&kitx=ano', region: 'EU' },
+
+
+	{ name: 'sbazar.cz', base: 'https://www.sbazar.cz/hledej/', suffix: '', region: 'EU' },
+	{ name: 'bazos.sk', base: 'https://www.bazos.sk/search.php?hledat=', suffix: '&rubriky=www&hlokalita=&humkreis=25&cenaod=&cenado=&Submit=H%C4%BEada%C5%A5&order=&kitx=ano', region: 'EU' },
+	{ name: 'olx.ro', base: 'https://www.olx.ro/oferte/q-', suffix: '/', region: 'EU' },
+	{ name: 'olx.bg', base: 'https://www.olx.bg/ads/q-', suffix: '/', region: 'EU' },
+	{ name: 'njuskalo.hr', base: 'https://www.njuskalo.hr/search/?keywords=', suffix: '', region: 'EU' },
+	{ name: 'bolha.com', base: 'https://www.bolha.com/search/?keywords=', suffix: '', region: 'EU' },
+
+	{ name: 'finn.no',  base: 'https://www.finn.no/recommerce/forsale/search?q=',  suffix: '',  region: 'EU'},
+	{ name: 'dba.dk',  base: 'https://www.dba.dk/recommerce/forsale/search?q=',  suffix: '',  region: 'EU'},
+	{ name: 'bland.is',  base: 'https://bland.is/classified/default.aspx?q=',  suffix: '',  region: 'EU'},
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
     { name: 'milanuncios', base: 'https://www.milanuncios.com/anuncios/?s=', suffix: '&orden=relevance&fromSearch=1&fromSuggester=0&suggestionUsed=0&hitOrigin=listing&recentSearchShowed=0&recentSearchUsed=0', region: 'EU' },
     { name: 'paruvendu', base: 'https://www.paruvendu.fr/recherche/?q=', suffix: '', region: 'EU' },
 	{ name: 'kleinanzeigen', base: 'https://www.kleinanzeigen.de/s-anzeige/', suffix: '/k0', region: 'EU' },
@@ -706,4 +859,3 @@ document.querySelectorAll('.site-checkbox').forEach(cb => {
 </script>
 </body>
 </html>
-	
